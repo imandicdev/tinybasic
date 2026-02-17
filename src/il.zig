@@ -1,3 +1,9 @@
+// =============================================================================
+// Project : tinybasic
+// File    : tinybasic\src\il.zig
+// Author  : Ilija Mandic
+// Purpose : IL assembler, opcode mapping, and label resolution logic.
+// =============================================================================
 const std = @import("std");
 
 pub const Operand = union(enum) {

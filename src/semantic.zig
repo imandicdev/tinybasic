@@ -1,3 +1,9 @@
+// =============================================================================
+// Project : tinybasic
+// File    : tinybasic\src\semantic.zig
+// Author  : Ilija Mandic
+// Purpose : Semantic validation rules for parsed TinyBASIC programs.
+// =============================================================================
 const std = @import("std");
 const ast = @import("ast.zig");
 

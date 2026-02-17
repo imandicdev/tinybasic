@@ -1,3 +1,9 @@
+// =============================================================================
+// Project : tinybasic
+// File    : tinybasic\src\ast.zig
+// Author  : Ilija Mandic
+// Purpose : AST type definitions and related data structures.
+// =============================================================================
 const std = @import("std");
 
 pub const Program = struct {

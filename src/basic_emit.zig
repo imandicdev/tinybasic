@@ -1,3 +1,9 @@
+// =============================================================================
+// Project : tinybasic
+// File    : tinybasic\src\basic_emit.zig
+// Author  : Ilija Mandic
+// Purpose : BASIC-to-IL emission and lowering helpers.
+// =============================================================================
 const std = @import("std");
 const ast = @import("ast.zig");
 

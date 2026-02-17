@@ -1,3 +1,9 @@
+// =============================================================================
+// Project : tinybasic
+// File    : tinybasic\src\parser.zig
+// Author  : Ilija Mandic
+// Purpose : Parser that converts token streams into TinyBASIC AST nodes.
+// =============================================================================
 const std = @import("std");
 const lexer = @import("lexer.zig");
 const ast = @import("ast.zig");

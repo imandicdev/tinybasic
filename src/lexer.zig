@@ -1,3 +1,9 @@
+// =============================================================================
+// Project : tinybasic
+// File    : tinybasic\src\lexer.zig
+// Author  : Ilija Mandic
+// Purpose : Lexer for TinyBASIC source lines and tokens.
+// =============================================================================
 const std = @import("std");
 
 pub const TokenTag = enum {
