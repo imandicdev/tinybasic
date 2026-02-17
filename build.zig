@@ -1,3 +1,9 @@
+// =============================================================================
+// Project : tinybasic
+// File    : tinybasic\build.zig
+// Author  : Ilija Mandic
+// Purpose : Build script for the TinyBASIC executable and test targets.
+// =============================================================================
 const std = @import("std");
 
 pub fn build(b: *std.Build) void {

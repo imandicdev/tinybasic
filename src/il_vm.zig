@@ -1,3 +1,9 @@
+// =============================================================================
+// Project : tinybasic
+// File    : tinybasic\src\il_vm.zig
+// Author  : Ilija Mandic
+// Purpose : IL virtual machine runtime and execution engine.
+// =============================================================================
 const std = @import("std");
 const il = @import("il.zig");
 const gdi_mod = @import("win32_gdi.zig");

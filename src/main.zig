@@ -1,3 +1,9 @@
+// =============================================================================
+// Project : tinybasic
+// File    : tinybasic\src\main.zig
+// Author  : Ilija Mandic
+// Purpose : Program entry point and CLI flow for TinyBASIC modes.
+// =============================================================================
 const std = @import("std");
 const il = @import("il.zig");
 const vm_mod = @import("il_vm.zig");

@@ -1,3 +1,9 @@
+// =============================================================================
+// Project : tinybasic
+// File    : tinybasic\src\win32_gdi.zig
+// Author  : Ilija Mandic
+// Purpose : Win32 GDI rendering and window integration layer.
+// =============================================================================
 const std = @import("std");
 
 const BOOL = i32;
