@@ -1,58 +1,53 @@
 # tinybasic
 
-TinyBASIC interpreter, IL VM, and Win32/GDI runtime implemented in Zig 0.15.x.
+TinyBASIC interpreter and IL virtual machine in Zig 0.15.x.
 
-## Author
+Author: Ilija Mandic
 
-- Ilija Mandic
+## What This Project Is
 
-## Project Purpose
+- A line-numbered TinyBASIC interpreter.
+- A stack-based IL VM runtime.
+- A Win32/GDI runtime layer for graphics and input built-ins.
 
-- Build a practical, modern TinyBASIC system in Zig using an IL-based execution model.
-- Learn and teach compiler/interpreter internals through real implementation, not toy-only examples.
-- Keep the codebase constrained and understandable while still supporting advanced workflows (graphics, input, tooling).
+## Historical Basis
 
-## Architecture
+The IL model follows the Tiny BASIC IL listing published in *People's Computer Company* (September 1975), pages 15-18.
 
-- Execution model: stack-based IL interpreter VM.
-- Runtime: line-numbered BASIC program store + IL control flow dispatcher.
-- Memory model: 64KB VM memory buffer for `POKE`/`PEEK`/bytecode and graphics stubs.
-- Graphics/input: Win32/GDI-backed built-ins exposed via IL (`BCALL`/runtime calls).
+Important distinction:
+- IL here is a virtual instruction set executed by this VM.
+- It is not raw CPU machine code.
+- The original listing was hosted on Intel Intellec 8 / MOD 80 (8080-era) systems.
 
-## IL Basis
+Reference files:
+- `spec/pcc_il_listing_normalized.il`
+- `spec/pcc_il_notes.md`
+- `spec/tinybasic_language_spec.md`
 
-- Primary historical source: *People's Computer Company* (September 1975), pages 15-18.
-- Project references:
-  - `spec/pcc_il_listing_normalized.il`
-  - `spec/pcc_il_notes.md`
-  - `spec/tinybasic_language_spec.md`
-- Human-readable context:
-  - Tiny BASIC IL is a virtual instruction set (for the interpreter), not a direct CPU instruction set.
-  - The original 1975 listing was written as macros for Intel Intellec 8 / MOD 80 systems (8080-era host environment).
-  - In this project, IL is kept portable and executed by the Zig VM implementation.
+## Main Source Files
 
-## Main Components
-
-- `src/il.zig`: IL assembler and opcode/label resolution.
-- `src/il_vm.zig`: IL virtual machine execution engine.
-- `src/parser.zig`, `src/lexer.zig`, `src/ast.zig`, `src/semantic.zig`: BASIC front-end pipeline.
-- `src/win32_gdi.zig`: Win32/GDI graphics integration.
-- `src/main.zig`: CLI entry points and runtime orchestration.
-
-## Scope
-
-- This repository is the interpreter + VM implementation.
-- BAS-to-NASM transpilation is a separate project: `bstoasm`.
+- `src/il.zig`: IL assembler and opcode/operand resolution.
+- `src/il_vm.zig`: VM execution engine and runtime behavior.
+- `src/lexer.zig`, `src/parser.zig`, `src/ast.zig`, `src/semantic.zig`: BASIC front-end.
+- `src/win32_gdi.zig`: Win32/GDI graphics backend.
+- `src/main.zig`: CLI entry point and mode dispatch.
 
 ## Build
 
 ```powershell
-cd D:\programiranje\Zig\tinybasic
-..\zig-x86_64-windows-0.15.1\zig.exe build
-.\zig-out\bin\tinybasic.exe
+zig build
+zig-out/bin/tinybasic
 ```
 
-## Notes
+On Windows, the binary is `zig-out/bin/tinybasic.exe`.
 
-- Public BASIC examples are intentionally minimal in this repository.
-- Advanced/private game BAS sources are kept out of version control by `.gitignore` policy.
+## Scope
+
+This repository is the interpreter/VM project.
+
+The separate BAS-to-NASM transpiler lives in `bastoasm`.
+
+## Repository Policy
+
+- Public BASIC examples in this repo stay minimal.
+- Advanced/private game BAS files are excluded by `.gitignore`.
