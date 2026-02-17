@@ -1,0 +1,16 @@
+.zig-cache/
+zig-out/
+zig-out-fast/
+
+*.obj
+*.pdb
+*.exe
+*.ilk
+*.lib
+
+# Keep BASIC source private by default.
+*.bas
+
+# Public BASIC examples allowed for git.
+!examples/public/
+!examples/public/*.bas
