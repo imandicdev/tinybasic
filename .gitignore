@@ -14,3 +14,4 @@ zig-out-fast/
 # Public BASIC examples allowed for git.
 !examples/public/
 !examples/public/*.bas
+docs/
