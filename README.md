@@ -26,6 +26,10 @@ TinyBASIC interpreter, IL VM, and Win32/GDI runtime implemented in Zig 0.15.x.
   - `spec/pcc_il_listing_normalized.il`
   - `spec/pcc_il_notes.md`
   - `spec/tinybasic_language_spec.md`
+- Human-readable context:
+  - Tiny BASIC IL is a virtual instruction set (for the interpreter), not a direct CPU instruction set.
+  - The original 1975 listing was written as macros for Intel Intellec 8 / MOD 80 systems (8080-era host environment).
+  - In this project, IL is kept portable and executed by the Zig VM implementation.
 
 ## Main Components
 
